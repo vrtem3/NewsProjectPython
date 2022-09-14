@@ -1,0 +1,4 @@
+blog/db.sqlite3
+blog/fpages/__pycache__
+blog/blog/__pycache__
+venv
