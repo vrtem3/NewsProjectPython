@@ -1,0 +1,54 @@
+{% extends 'flatpages/default.html' %}
+
+{% load custom_filters %}
+{% load custom_tags %}
+
+<!-- Название у нас будет PostList -->
+{% block title %}
+{% endblock title %}
+ 
+<!-- В контенте на странице мы выводим все товары -->
+{% block content %}
+<h2>{{ post.title|censorlower }}</h2>
+{{ post.text|censorlower }}<br>
+{{ post.categoryType}}<br>
+{{ post.category }}
+<br>
+
+Дата публикации: {{ post.dateCreate|date:'d.m.Y' }}<br>
+{% if post.categoryType == "NW" %}
+    <div style="text-align: center;">
+        <table border="1" style="display: inline-block;">
+            <tbody>
+                <tr><td bordercolor="#212529"><a href="/blog/news/{{ post.id }}/edit/">Редактировать новость</a></td></tr><br>
+                <tr><td bordercolor="#212529"><a href="/blog/news/{{ post.id }}/delete/">Удалить новость</a></td></tr>
+            </tbody>
+        </table>
+    </div>
+{% else %}
+    <div style="text-align: center;">
+        <table border="1" style="display: inline-block;">
+            <tbody>
+                <tr><td bordercolor="#212529"> <a href="/blog/articles/{{ post.id }}/edit/">Редактировать статью</a></td></tr><br>
+                <tr><td bordercolor="#212529"> <a href="/blog/articles/{{ post.id }}/delete/">Удалить статью</a></td></tr>
+            </tbody>
+        </table>
+    </div>
+{% endif %}
+<hr><br>
+{% if is_not_subscribers %}
+    {% for cat in post.category.all %}
+    {{ post.postCategory.id }}
+    <button><a href="/add_subscribe/{{ post.postCategory.id }}">Подписка на категорию {{ post.postCategory }}</a></button>
+    {% endfor %}
+{% else %}
+    {% if is_subscribers %}
+        {% for cat in post.category.all %}
+        {{ post.postCategory.id }}
+        <button><a href="/del_subscribe/{{ post.postCategory.id }}">Отписка от категории {{ post.postCategory }}</a></button>
+        {% endfor %}
+    {% endif %}
+{% endif %}
+<hr><br>
+<a href="/blog/">Все статьи</a>
+{% endblock content %}

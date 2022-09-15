@@ -1,0 +1,59 @@
+{% extends 'flatpages/default.html' %}
+
+{% load custom_filters %}
+{% load custom_tags %}
+
+<!-- Название у нас будет PostList -->
+{% block title %}
+{% endblock title %}
+ 
+<!-- В контенте на странице мы выводим все товары -->
+{% block content %}
+<h1>Блог о Битрикс24</h1>
+Дата и время: {% current_time '%d.%m.%Y %H:%M' %}<br>
+<br>
+<hr>
+<h4>Поиск</h4>
+<form action="" method="get">
+    {# Переменная, которую мы передали через контекст, может сгенерировать нам форму с полями #}
+    {{ filterset.form.as_p }}
+    {# Добавим кнопку отправки данных формы #}
+    <input type="submit" value="Найти" />
+</form>
+<hr>
+<br>
+    {% if postlist %}
+        {% for post in postlist %}
+            <h4><b><u><a style="color: #212529" class="nav-link" href="{% url 'post_detail' post.id %}">{{ post.title|censorlower }}</a></u></b></h4>
+            {{ post.dateCreate|date:'d.m.Y h:m:s' }}<br>
+            {{ post.text|truncatechars:20|censorlower }}<br>
+            {{post.categoryType}}
+            <hr>
+        {% endfor %}
+    {% else %}
+        <h2>Статей нет!</h2>
+    {% endif %}
+
+    {# Добавляем пагинацию на страницу #}
+
+    {# Информация о предыдущих страницах #}
+    {% if page_obj.has_previous %} <!-- существует ли предыдущая страница -->
+        <a href="?{% url_replace page=1 %}">1</a>
+        {% if page_obj.previous_page_number != 1 %} <!-- номер предыдущей страницы -->
+            ...
+            <a href="?{% url_replace page=page_obj.previous_page_number %}">{{ page_obj.previous_page_number }}</a>
+        {% endif %}
+    {% endif %}
+
+    {# Информация о текущей странице #}
+    {{ page_obj.number }}
+
+    {# Информация о следующих страницах #}
+    {% if page_obj.has_next %} <!-- существует ли следующая страница -->
+        <a href="?{% url_replace page=page_obj.next_page_number %}">{{ page_obj.next_page_number }}</a> <!-- номер следующей страницы -->
+        {% if paginator.num_pages != page_obj.next_page_number %} <!-- объект paginator содержит информацию о количестве страниц в переменной num_pages -->
+           ...
+           <a href="?{% url_replace page=page_obj.paginator.num_pages %}">{{ page_obj.paginator.num_pages }}</a>
+        {% endif %}
+    {% endif %}
+{% endblock content %}
