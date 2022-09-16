@@ -5,3 +5,4 @@ venv
 blog/news/migrations
 blog/protect/migrations
 blog/sign/migrations
+blog/news/templatetags/__pycache__
