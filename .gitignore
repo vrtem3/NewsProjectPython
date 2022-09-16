@@ -6,3 +6,5 @@ blog/news/migrations
 blog/protect/migrations
 blog/sign/migrations
 blog/news/templatetags/__pycache__
+blog/news/__pycache__
+blog/protect/__pycache__
