@@ -8,3 +8,5 @@ blog/sign/migrations
 blog/news/templatetags/__pycache__
 blog/news/__pycache__
 blog/protect/__pycache__
+blog/sign/__pycache__
+Django_Shell.txt
