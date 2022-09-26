@@ -1,8 +1,23 @@
 from celery import shared_task
-import time
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+from django.core.mail import mail_managers, send_mail
+from .models import Post
+
 
 @shared_task
-def notify_create_post():
-    print("Hello, world!")
-
-
+# создаём функцию обработчик с параметрами под регистрацию сигнала
+@receiver(post_save, sender=Post)
+def notify_post(sender, instance, created, **kwargs): 
+    if created:
+        # subject = f'{instance.post_title} {instance.date_create.strftime("%d %m %Y")}'
+        subject = f'{instance.title}! Опубликована новая запись.'
+    else:
+        # subject = f'Appointment changed for {instance.post_title} {instance.date_create.strftime("%d %m %Y")}'
+        # subject = f'{instance.title} - статья была изменена.'
+        pass
+ 
+    mail_managers(
+        subject=subject,
+        message=instance.text,
+    )

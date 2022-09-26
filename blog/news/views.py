@@ -14,8 +14,8 @@ from django.template.loader import render_to_string  # импортируем ф
 from django.conf import settings
 from django.utils import timezone
 # from NewProject0622.settings import DAILY_POST_LIMIT
-from .tasks import hello  # импорт задач приложения news
-#  from django.http import HttpResponse
+# from .tasks import hello  # импорт задач приложения news
+# from django.http import HttpResponse
 
 
 class PostList(ListView):
