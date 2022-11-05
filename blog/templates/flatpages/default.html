@@ -14,34 +14,37 @@
     </head>
     <body>
         <!-- Responsive navbar-->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
-            <div class="container">
-                <a class="navbar-brand" href="#">InTech Production</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                        data-target="#navbarResponsive"
-                        aria-controls="navbarResponsive" aria-expanded="false"
-                        aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="/home/">Home
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/news/">Блог</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/about/">О нас</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/search/">Поиск</a>
-                        </li>
-                    </ul>
+        {% load cache %} <!-- Загружаем кэширование -->
+            {% cache 360 menu %} <!-- Кэшируем блок меню на 360 секунд -->
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+                <div class="container">
+                    <a class="navbar-brand" href="#">InTech Production</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarResponsive"
+                            aria-controls="navbarResponsive" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarResponsive">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="/home/">Home
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/news/">Блог</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/about/">О нас</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/search/">Поиск</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-         </nav>
+            </nav>
+        {% endcache %} <!-- Конец кэшируемого блока -->
         <!-- Page content-->
         <div class="container">
             <div class="row">

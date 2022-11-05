@@ -41,6 +41,7 @@ class PostList(ListView):
         context['time_now'] = datetime.utcnow()
         context['filterset'] = self.filterset
         return context
+
     
 #  Запуск celery задачи в представлении
 #    def get(self, request):
