@@ -11,3 +11,4 @@ blog/protect/__pycache__
 blog/sign/__pycache__
 Django_Shell.txt
 blog/cache_files
+.env
