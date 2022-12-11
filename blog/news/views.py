@@ -13,6 +13,7 @@ from django.core.mail import mail_admins  # импортируем функци�
 from django.template.loader import render_to_string  # импортируем функцию, которая срендерит наш html в текст
 from django.conf import settings
 from django.utils import timezone
+from django.utils.translation import gettext as _ # импортируем функцию для перевода
 # from NewProject0622.settings import DAILY_POST_LIMIT
 # from .tasks import hello  # импорт задач приложения news
 # from django.http import HttpResponse
@@ -146,3 +147,4 @@ def del_subscribe(request, **kwargs):
     print('Пользователь', request.user, 'убрал из подписок категории:', Category.objects.get(pk=pk))
     Category.objects.get(pk=pk).subscribers.remove(request.user)
     return redirect('/blog/')
+

@@ -1,0 +1,245 @@
+2022-12-11 13:26:27,193 - ERROR - django.request - Internal Server Error: /home/ - /home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/utils/log.py - (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("Invalid block tag on line 3: 'trans'. Did you forget to register or load this tag?"), <traceback object at 0x7fad499a2b40>)
+Traceback (most recent call last):
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/template/base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: 'trans'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/utils/deprecation.py", line 138, in __call__
+    response = self.process_response(request, response)
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/contrib/flatpages/middleware.py", line 12, in process_response
+    return flatpage(request, request.path_info)
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/contrib/flatpages/views.py", line 45, in flatpage
+    return render_flatpage(request, f)
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/contrib/flatpages/views.py", line 60, in render_flatpage
+    template = loader.select_template((f.template_name, DEFAULT_TEMPLATE))
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/template/loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/template/backends/django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/template/base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/template/base.py", line 568, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 3: 'trans'. Did you forget to register or load this tag?
+2022-12-11 13:26:27,197 - ERROR - django.server - "GET /home/ HTTP/1.1" 500 160010 - /home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py - None
+2022-12-11 13:30:55,289 - ERROR - django.request - Internal Server Error: /home/ - /home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/utils/log.py - (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("Invalid block tag on line 7: 'get_available_languages'. Did you forget to register or load this tag?"), <traceback object at 0x7ff4166d2f40>)
+Traceback (most recent call last):
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/template/base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: 'get_available_languages'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/utils/deprecation.py", line 138, in __call__
+    response = self.process_response(request, response)
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/contrib/flatpages/middleware.py", line 12, in process_response
+    return flatpage(request, request.path_info)
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/contrib/flatpages/views.py", line 45, in flatpage
+    return render_flatpage(request, f)
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/contrib/flatpages/views.py", line 60, in render_flatpage
+    template = loader.select_template((f.template_name, DEFAULT_TEMPLATE))
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/template/loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/template/backends/django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/template/base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/template/base.py", line 568, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 7: 'get_available_languages'. Did you forget to register or load this tag?
+2022-12-11 13:30:55,291 - ERROR - django.server - "GET /home/ HTTP/1.1" 500 178043 - /home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py - None
+2022-12-11 13:31:37,831 - ERROR - django.request - Internal Server Error: /home/ - /home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/utils/log.py - (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("Invalid block tag on line 7: 'get_available_languages'. Did you forget to register or load this tag?"), <traceback object at 0x7ff41686d200>)
+Traceback (most recent call last):
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/template/base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: 'get_available_languages'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/utils/deprecation.py", line 138, in __call__
+    response = self.process_response(request, response)
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/contrib/flatpages/middleware.py", line 12, in process_response
+    return flatpage(request, request.path_info)
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/contrib/flatpages/views.py", line 45, in flatpage
+    return render_flatpage(request, f)
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/contrib/flatpages/views.py", line 60, in render_flatpage
+    template = loader.select_template((f.template_name, DEFAULT_TEMPLATE))
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/template/loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/template/backends/django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/template/base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/template/base.py", line 568, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 7: 'get_available_languages'. Did you forget to register or load this tag?
+2022-12-11 13:31:37,832 - ERROR - django.server - "GET /home/ HTTP/1.1" 500 178043 - /home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py - None
+2022-12-11 13:31:42,236 - ERROR - django.request - Internal Server Error: /home/ - /home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/utils/log.py - (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("Invalid block tag on line 7: 'get_available_languages'. Did you forget to register or load this tag?"), <traceback object at 0x7ff416895b00>)
+Traceback (most recent call last):
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/template/base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: 'get_available_languages'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/utils/deprecation.py", line 138, in __call__
+    response = self.process_response(request, response)
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/contrib/flatpages/middleware.py", line 12, in process_response
+    return flatpage(request, request.path_info)
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/contrib/flatpages/views.py", line 45, in flatpage
+    return render_flatpage(request, f)
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/contrib/flatpages/views.py", line 60, in render_flatpage
+    template = loader.select_template((f.template_name, DEFAULT_TEMPLATE))
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/template/loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/template/backends/django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/template/base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/template/base.py", line 568, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 7: 'get_available_languages'. Did you forget to register or load this tag?
+2022-12-11 13:31:42,237 - ERROR - django.server - "GET /home/ HTTP/1.1" 500 178042 - /home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py - None
+2022-12-11 13:34:21,914 - ERROR - django.request - Internal Server Error: /home/ - /home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/utils/log.py - (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("Invalid block tag on line 7: 'get_available_languages'. Did you forget to register or load this tag?"), <traceback object at 0x7f78d0cb16c0>)
+Traceback (most recent call last):
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/template/base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: 'get_available_languages'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/utils/deprecation.py", line 138, in __call__
+    response = self.process_response(request, response)
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/contrib/flatpages/middleware.py", line 12, in process_response
+    return flatpage(request, request.path_info)
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/contrib/flatpages/views.py", line 45, in flatpage
+    return render_flatpage(request, f)
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/contrib/flatpages/views.py", line 60, in render_flatpage
+    template = loader.select_template((f.template_name, DEFAULT_TEMPLATE))
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/template/loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/template/backends/django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/template/base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/template/base.py", line 568, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 7: 'get_available_languages'. Did you forget to register or load this tag?
+2022-12-11 13:34:21,916 - ERROR - django.server - "GET /home/ HTTP/1.1" 500 174038 - /home/artem/Документы/NewsProjectPython/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py - None
