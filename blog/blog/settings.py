@@ -239,6 +239,9 @@ LOGGING = {
         'warning_security': {
             'format': '%(asctime)s - %(levelname)s - %(module)s - %(message)s'
         },
+        'mail_admins': {
+            'format': '%(asctime)s - %(levelname)s - %(name)s - %(message)s - %(pathname)s'
+        },
     },
     'filters': {
         'require_debug_true': {
@@ -267,13 +270,9 @@ LOGGING = {
             'class': 'logging.StreamHandler',
             'formatter': 'console_error_crit'
         },
-        'mail_admins': {
-            'level': 'ERROR',
-            'class': 'django.utils.log.AdminEmailHandler'
-        },
         'info_general_log': {
             'level': 'INFO',
-            'filters': ['require_debug_true'],
+            'filters': ['require_debug_false'],
             'class': 'logging.FileHandler',
             'filename': 'general.log',
             'formatter': 'info_general'
@@ -291,6 +290,12 @@ LOGGING = {
             'class': 'logging.FileHandler',
             'filename': 'security.log',
             'formatter': 'warning_security'
+        },
+        'mail_admins': {
+            'level': 'ERROR',
+            'class': 'django.utils.log.AdminEmailHandler',
+            'formatter': 'mail_admins',
+            'filters': ['require_debug_false'],
         },
     },
     'loggers': {
@@ -312,7 +317,7 @@ LOGGING = {
             'propagate': False,
         },
         'django.server': {
-            'handlers': ['error_log'],
+            'handlers': ['mail_admins' ,'error_log'],
             'level': 'ERROR',
             'propagate': False,
         },
